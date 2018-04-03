@@ -1,8 +1,11 @@
 public class Program {
     public static void main(String[] args)
     {
-        System.out.print(123123);
 
+        String s="asd";
+        String b=s;
+        s="asds";
+        System.out.print(b==s);
     }
 
 }
