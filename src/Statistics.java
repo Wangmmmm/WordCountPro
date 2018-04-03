@@ -1,4 +1,4 @@
-import sun.font.TrueTypeFont;
+
 
 public class Statistics {
     enum State
@@ -13,9 +13,26 @@ public class Statistics {
 
     }
 
+    String currentWord;
+
     public void Count(char c)
     {
+        switch(state)
+        {
+            case Normal:
+                if(IsInvalid(c))break;
+                else {
+                    if(IsChar(c))state=State.Stat;
+                    break;
+                }
 
+            case Stat:
+
+
+                break;
+
+                default: break;
+        }
     }
     public void End()
     {
