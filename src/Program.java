@@ -14,7 +14,7 @@ public class Program {
             st.Count(c);
         }
         st.End();
-        
+
         ArrayList<MyString> mss=MyString.GetStrings();
 
 
