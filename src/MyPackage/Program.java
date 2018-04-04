@@ -1,3 +1,5 @@
+package MyPackage;
+
 import java.util.ArrayList;
 
 public class Program {

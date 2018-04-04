@@ -1,5 +1,5 @@
+package MyPackage;
 
-import java.util.ArrayList;
 public class Statistics {
     enum State
     {

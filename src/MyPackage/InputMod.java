@@ -1,5 +1,4 @@
-
-import jdk.internal.dynalink.beans.StaticClass;
+package MyPackage;
 
 import java.io.File;
 import java.io.FileReader;
