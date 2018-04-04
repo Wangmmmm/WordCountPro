@@ -17,16 +17,23 @@ public class InputMod {
 
     public static boolean ReadContent(String path)throws Exception{
         if(path==null||path.isEmpty()||path.length()==0){
-            System.out.print("empty path！");
+            System.out.println("empty path！");
             return false;
         }
+
         if(!IsTxtFormat(path)){
-            System.out.print("error format!");
+            System.out.println("error format!");
             return false;
         }
 
         StringBuilder stringBuilder=new StringBuilder();
         File file=new File(path);
+
+        if(!file.exists()){
+            System.out.println("file not exist");
+            return false;
+        }
+
         FileReader reader=new FileReader(file);
 
         StringBuilder wordStringBuilder=new StringBuilder();
