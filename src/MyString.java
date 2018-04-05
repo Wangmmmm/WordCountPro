@@ -4,16 +4,19 @@ public class MyString  implements Comparable{
 
     public String string;
     private int count;
+    //实际使用的构造函数
     public MyString(String s)
     {
         string =s;
         count=1;
     }
+    //测试用的构造函数
     public MyString(String s,int n)
     {
         string =s;
         count=n;
     }
+    //拷贝构造函数
     public MyString(MyString ms)
     {
         this.string =ms.string;
@@ -25,6 +28,7 @@ public class MyString  implements Comparable{
     {
         return count;
     }
+    //实现MyString对象的比较方法
     public int compareTo(Object o) {
         MyString s = (MyString) o;
         if (this.count > s.count) {
@@ -45,7 +49,10 @@ public class MyString  implements Comparable{
       //  return 0;
     }
 
+    //最终结果的存储容器
     private static ArrayList<MyString> myStrings=new ArrayList<MyString>();
+
+    //插入一个字符串，进行判断当前是否存在相同的字符
     public static void  Insert(String s)
     {
         if(myStrings.isEmpty()){myStrings.add(new MyString(s));return;}
@@ -56,6 +63,7 @@ public class MyString  implements Comparable{
         }
         if(!find) myStrings.add(new MyString(s));
     }
+    //获取排序后的列表 且只输出前100个
     public static ArrayList<MyString> GetStrings()
     {
         quickSort(myStrings,0,myStrings.size()-1);
@@ -85,6 +93,7 @@ public class MyString  implements Comparable{
         return hi;
     }
 
+    //对列表进行快速排序
     private static void quickSort(ArrayList<MyString> array,int lo ,int hi){
         if(lo>=hi){
             return ;
