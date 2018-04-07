@@ -9,7 +9,7 @@ public class Output {
 
     //构造函数，调用GetStrings方法，获取要输出的内容
     public Output() {
-        ArrayList<MyString> out_content = MyString.GetStrings();
+        out_content = MyString.GetStrings();
     }
 
     //测试用的构造函数
@@ -38,6 +38,9 @@ public class Output {
 
             //遍历out_content，完成output_String
             int length = out_content.size();
+            //确保至多输出前100个排序结果
+            if (length > 100)
+                length = 100;
             for (int i = 0; i < length; i++) {
                 MyString temp = out_content.get(i);
                 output_String = output_String + "\n\n" + temp.string + " " + temp.GetCount();
