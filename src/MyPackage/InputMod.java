@@ -22,7 +22,7 @@ public class InputMod {
         }
 
         if(!IsTxtFormat(path)){
-            System.out.println("error format!");
+
             return false;
         }
 
@@ -55,9 +55,14 @@ public class InputMod {
     public static boolean IsTxtFormat(String path){
         String format;
         int indexOfPoint=path.lastIndexOf(".");
+        if(indexOfPoint<0){
+            System.out.println("error format!");
+            return false;
+        }
         format=path.substring(indexOfPoint);
-        if(format.equals(enableFormat))
+        if(format.contains(enableFormat))
             return true;
+        System.out.println("error format!");
         return false;
     }
 

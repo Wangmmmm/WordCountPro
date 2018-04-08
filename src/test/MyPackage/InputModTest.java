@@ -17,11 +17,13 @@ public class InputModTest {
 
 @Before
 public void before() throws Exception {
+    System.out.println("*****************Test Start:*****************");
 }
 
 @After
-public void after() throws Exception { 
-} 
+public void after() throws Exception {
+    System.out.println("*****************Test Complete!***************");
+}
 
 /** 
 * 
@@ -30,8 +32,8 @@ public void after() throws Exception {
 */ 
 @Test
 public void testReadContent() throws Exception {
-    String pathes[]={"d:/test.txt","test.txt","d:test.doc","test.doc"};
-    boolean[] expResult={true,false,false,false};
+    String pathes[]={"d:/test.txt","d:test.doc","test.txt","test.doc",""," "};
+    boolean[] expResult={true,false,false,false,false,false};
     int pathCount=pathes.length;
     boolean [] results=new boolean[pathCount];
     for(int i=0;i<pathCount;i++){
@@ -50,7 +52,17 @@ public void testReadContent() throws Exception {
 */ 
 @Test
 public void testIsTxtFormat() throws Exception { 
-//TODO: Test goes here... 
+//TODO: Test goes here...
+    String pathes[]={".txt",". txt"," .txt",""," ",".doc"};
+    boolean[] expResult={true,false,true,false,false,false};
+    int pathCount=pathes.length;
+    boolean [] results=new boolean[pathCount];
+    for(int i=0;i<pathCount;i++){
+        results[i]= InputMod.IsTxtFormat(pathes[i]);
+    }
+    for(int i=0;i<pathCount;i++){
+        Assert.assertEquals("error",expResult[i],results[i]);
+    }
 } 
 
 /** 
@@ -58,20 +70,20 @@ public void testIsTxtFormat() throws Exception {
 * Method: IsAbsolutePath(String path) 
 * 
 */ 
-@Test
-public void testIsAbsolutePath() throws Exception { 
-//TODO: Test goes here... 
-} 
-
-/** 
-* 
-* Method: ShowWordTable() 
-* 
-*/ 
-@Test
-public void testShowWordTable() throws Exception { 
-//TODO: Test goes here... 
-} 
+//@Test
+//public void testIsAbsolutePath() throws Exception {
+////TODO: Test goes here...
+//}
+//
+///**
+//*
+//* Method: ShowWordTable()
+//*
+//*/
+//@Test
+//public void testShowWordTable() throws Exception {
+////TODO: Test goes here...
+//}
 
 
 } 
