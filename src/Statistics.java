@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 public class Statistics {
     enum State {
@@ -14,6 +15,23 @@ public class Statistics {
         currentWord = "";
         //   allWords=new ArrayList<String>();
     }
+    public void Input(String s)
+    {
+        for(int i=0;i<s.length();i++)
+        {
+            Count(s.charAt(i));
+        }
+        End();
+    }
+    public ArrayList<String> GetResult()
+    {
+        ArrayList<String> ss=new ArrayList<String>();
+        for (MyString ms:MyString.myStrings
+             ) {
+            ss.add(ms.string);
+        }
+        return ss;
+    }
 
 
     public void Count(char c) {
@@ -29,7 +47,6 @@ public class Statistics {
                     }
                     break;
                 }
-
             case Stat:
                 if (IsChar(c)) {
                     currentWord += c;
@@ -47,8 +64,9 @@ public class Statistics {
             case OneBar: {
                 if (IsChar(c)) {
                     currentWord += c;
+                    state=State.Stat;
                 } else if (IsBar(c) || IsInvalid(c)) {
-                    currentWord.substring(0, currentWord.length());
+                    currentWord=currentWord.substring(0, currentWord.length()-1);
                     MyString.Insert(currentWord);
                     state = State.Normal;
                     currentWord = "";

@@ -44,7 +44,7 @@ public class MyString implements Comparable {
     }
 
     //最终结果的存储容器
-    private static ArrayList<MyString> myStrings = new ArrayList<MyString>();
+    public static ArrayList<MyString> myStrings = new ArrayList<MyString>();
 
     //插入一个字符串，进行判断当前是否存在相同的字符
     public static void Insert(String s) {
