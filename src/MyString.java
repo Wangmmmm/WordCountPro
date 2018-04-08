@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 
 public class MyString implements Comparable {
@@ -66,7 +67,13 @@ public class MyString implements Comparable {
     public static ArrayList<MyString> GetStrings() {
         quickSort(myStrings, 0, myStrings.size() - 1);
         if (myStrings.size() <= 100) return myStrings;
-        else return (ArrayList<MyString>) myStrings.subList(0, 99);
+        ArrayList<MyString> res=new ArrayList<MyString>();
+        for(int i=0;i<100;i++)
+        {
+            res.add(myStrings.get(i));
+        }
+        return res;
+        //else return (ArrayList<MyString>) myStrings.subList(0, 99);
         // return null;
     }
 
