@@ -16,14 +16,8 @@ public class Program {
             System.out.println("out put success");
         }else {
             System.out.println("out put failed");
-
         }
 
-        //输出部分白盒测试
-        whiteBox1();
-        whiteBox2();
-        whiteBox3();
-        whiteBox4();
     }
     //要写入的文件已经存在，且统计得到的单词数<=100个；
     static void whiteBox1() {
