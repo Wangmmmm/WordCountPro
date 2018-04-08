@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Program {
     public static void main(String[] args)throws Exception {
-        String path=args[1];
+        String path=args[0];
 
         if(!InputMod.ReadContent(path)){
             System.out.println("Read file failed");
