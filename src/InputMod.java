@@ -27,6 +27,12 @@ public class InputMod {
 
         StringBuilder stringBuilder = new StringBuilder();
         File file = new File(path);
+
+        if(!file.exists())
+        {
+            System.out.println("file not exist");
+            return  false;
+        }
         FileReader reader = new FileReader(file);
 
         StringBuilder wordStringBuilder = new StringBuilder();

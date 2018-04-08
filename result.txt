@@ -1,0 +1,5 @@
+.txt文件单词词频统计：
+
+sadasdasdasd 1
+
+txt 1
